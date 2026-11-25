@@ -19,10 +19,24 @@
    Calcule e exiba os 4 resultados no console.
    ========================================================================== */
 
-
-
-
-
+let cafe = {
+   "preco": 8.50 ,
+   "quantidade":42
+}
+let bolo={
+   "preco":12.00,
+   "quantidae":18
+}
+let taxaOperacional = 15.00;
+let clientesAtendidos = 30;
+let cookies = {
+   "total": 125,
+   "capacidade": 6
+}
+let faturamentoBruto = ((cafe.preco * cafe.quantidade) + (bolo.preco * bolo.quantidae))
+console.log ("Faturamento Bruto: R$",faturamentoBruto)
+let faturamentoLiquido = (faturamentoBruto - taxaOperacional)
+console.log ("Faturamento Liquido: R$",faturamentoLiquido)
 /* ==========================================================================
    EXERCÍCIO 2: VALIDAÇÃO DE CADASTRO E COMPRA
    
