@@ -37,6 +37,10 @@ let faturamentoBruto = ((cafe.preco * cafe.quantidade) + (bolo.preco * bolo.quan
 console.log ("Faturamento Bruto: R$",faturamentoBruto)
 let faturamentoLiquido = (faturamentoBruto - taxaOperacional)
 console.log ("Faturamento Liquido: R$",faturamentoLiquido)
+let tikcetMedio = faturamentoBruto / clientesAtendidos
+console.log ("Ticket Médio: R$",tikcetMedio)
+let sobraCookies = cookies.total %  6
+console.log ("Sobra de Cookies:",sobraCookies)
 /* ==========================================================================
    EXERCÍCIO 2: VALIDAÇÃO DE CADASTRO E COMPRA
    
@@ -57,10 +61,27 @@ console.log ("Faturamento Liquido: R$",faturamentoLiquido)
    4. O tipo do dado digitado difere do tipo esperado no banco?
    5. O saldo do cliente cobre o valor da compra?
    ========================================================================== */
+console.log("Atividade 2")
+let idade = 17
+let formulário = "100"
+let banco = 100
+let saldoDisponivel = 250.00
+let valorCompra = 250.00
 
+const maiorIdade = 17 >= 18
+console.log ("O cliente atingiu a maioridade civil:",maiorIdade)
 
+const codigoValor = formulário == banco
+console.log ("O código digitado confere com o banco considerando apenas o valor:", codigoValor)
 
+const codigoValorDado = formulário === banco
+console.log("O código digitado confere com o banco considerando valor e tipo de dado:", codigoValorDado)
 
+const codigoDifere = formulário !== banco
+console.log("O tipo do dado digitado difere do tipo esperado no banco:",codigoDifere)
+
+const saldoCompra = saldoDisponivel == valorCompra
+console.log("O saldo do cliente cobre o valor da compra:",saldoCompra)
 
 /* ==========================================================================
    EXERCÍCIO 3: CONCESSÃO DE BENEFÍCIOS
@@ -83,3 +104,19 @@ console.log ("Faturamento Liquido: R$",faturamentoLiquido)
    3. Acesso à área VIP: liberado para assinantes premium, ou para compras a
       partir de 300 reais que possuam cupom promocional.
    ========================================================================== */
+   let compraValor = 220
+   let assinantePremium = false
+   let cupom = true
+   let restriçãoEntrega = false
+   let clienteEstudante = true
+   let idadeEstudante = 22
+
+   const freteGratis = compraValor >= 200 || assinantePremium === true && restriçãoEntrega
+   console.log("Frete grátis: concedido para compras a partir de 200 reais ou para assinantes premium \n" +       
+      "desde que o endereço não tenha restrição de entrega:",freteGratis)
+
+   const descontoUniversitario = clienteEstudante <= 29
+   console.log("Desconto universitário: concedido para estudantes com até 29 anos de idade:", descontoUniversitario)
+
+   const areaVip = (assinantePremium || compraValor >= 300) && cupom
+   console.log("Acesso à área VIP: liberado para assinantes premium, ou para compras a partir de 300 reais que possuam cupom promocional.",areaVip)
